@@ -38,11 +38,14 @@ void setup() {
      pinMode(ID1, OUTPUT);
      pinMode(ID2, OUTPUT);
 
-      pinMode(13, OUTPUT); 
+      pinMode(13, OUTPUT);
+      pinMode (20,OUTPUT); // place a LED on pin 20 
 }
 //use slow decay PWM value maximum 100  ref https://www.dfrobot.com/wiki/index.php/Dual_1.5A_Motor_Driver_-_HR8833_SKU:_DRI0040
 void loop() {
   digitalWrite(13,LOW);
+  digitalWrite(20,LOW);
+  
   Motor_reset();
    /*  check if data has been sent from the computer: */
   if (Serial1.available()) {
@@ -53,6 +56,7 @@ void loop() {
     if(byteRead== 'F'){
       Serial1.println("Moving Forward");
       digitalWrite(13,HIGH);
+      digitalWrite(20,HIGH);
       MA_move(50,0);
       MC_move(50,0);
       delay(1000);
@@ -60,6 +64,7 @@ void loop() {
     else if (byteRead == 'B')
       {
         Serial1.println("Moving Backword");
+        digitalWrite(20,HIGH);
         MA_move(50,1);
         MC_move(50,1);
         delay(1000);
@@ -68,6 +73,7 @@ void loop() {
         {
           
           Serial1.println("Moving Left");
+          digitalWrite(20,HIGH);
           MA_move(50,0);
           MC_move(50,1);
           delay(1000);
@@ -76,6 +82,7 @@ void loop() {
           {
             
             Serial1.println("Moving Right");
+            digitalWrite(20,HIGH);
             MA_move(50,1);
             MC_move(50,0);
             delay(1000);
@@ -83,7 +90,6 @@ void loop() {
             else{
       /*ECHO the value that was read, back to the serial port. */
       Serial1.write(byteRead);
-      digitalWrite(13,LOW);
     }
   }
 
