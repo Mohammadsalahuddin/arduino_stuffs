@@ -1,0 +1,5 @@
+https://github.com/JBot
+http://www.instructables.com/id/Position-estimation-of-a-wheeled-bot-with-arduino/?ALLSTEPS
+
+Still not tasted
+Have a plan to play with it.
