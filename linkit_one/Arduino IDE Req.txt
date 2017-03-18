@@ -1,0 +1,6 @@
+Tested with Arduino 16.9
+
+Use Modem Port For UPDATE
+
+
+http://download.labs.mediatek.com/package_mtk_linkit_index.json

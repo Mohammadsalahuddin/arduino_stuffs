@@ -1,0 +1,1 @@
+These are additional examples for LinkIt ONE SDK
