@@ -1,0 +1,48 @@
+
+#include <Wire.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BME280.h>
+
+Adafruit_BME280 bme; // I2C
+
+
+float h, t, p;
+
+
+void setup() {
+  // Initializing serial port for debugging purposes
+  Serial.begin(115200);
+  delay(10);
+  Wire.begin(D3, D4);
+  Wire.setClock(100000);
+  
+  Serial.println(F("BME280 test"));
+
+  if (!bme.begin()) {
+    Serial.println("Could not find a valid BME280 sensor, check wiring!");
+    while (1);
+  }
+}
+
+void getWeather() {
+  
+    h = bme.readHumidity();
+    t = bme.readTemperature();
+    p = bme.readPressure()/100.0F;
+    Serial.println(t);
+    Serial.println(h);
+    Serial.println(p);
+    delay(100);
+ 
+}
+
+// runs over and over again
+void loop() 
+
+{
+  getWeather();
+  delay(1000);
+  
+  
+
+} 
