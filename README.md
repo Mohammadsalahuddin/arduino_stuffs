@@ -1,2 +1,2 @@
 # arduino_stuffs
-All about arduino sensors and referece.
+All about arduino's sensors test and referece.
