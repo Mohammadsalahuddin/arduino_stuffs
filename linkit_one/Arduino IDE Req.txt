@@ -1,4 +1,4 @@
-Tested with Arduino 16.9
+Tested with Arduino 1.6.9
 
 Use Modem Port For UPDATE
 
